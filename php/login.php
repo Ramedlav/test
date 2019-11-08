@@ -1,6 +1,8 @@
 <?php
-include 'classes/dbc.class.php';
-include 'classes/user.class.php';
+include 'classes/DB.php';
+include 'classes/User.php';
+include 'classes/Profile.php';
+
 $user = new user();
 $login = $_POST['name'];
 $pass = $_POST['password'];
