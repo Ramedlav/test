@@ -10,8 +10,10 @@ class User extends DB
         if ($numRows){
 
             $_SESSION['login']='true';
+            $_SESSION['time']=date('H:i:s');
+
             $new= new Profile();
-            $new->Show_Info($row);
+            $show = $new->Show_Info($row);
             echo $show;
         }
         else{ echo 'non correct login or password';}
