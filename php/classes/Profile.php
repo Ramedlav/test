@@ -2,10 +2,7 @@
 class Profile extends User {
 
     function Show_Info($row){
-        if (!isset($_SESSION['start_time'])){
-            $_SESSION['start_time']=date('H:i:s');
-//            var_dump($_SESSION['start_time']);
-        }
+        $_SESSION['time']=date('H:i:s');
         $_SESSION['name']= $row['name'];
         if(isset($_SESSION)) {echo '<br> on <br>';}else{echo '<br> off <br>';}
 

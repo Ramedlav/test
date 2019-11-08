@@ -10,7 +10,11 @@ class User extends DB
         if ($numRows){
 
             $_SESSION['login']='true';
-            $_SESSION['time']=date('H:i:s');
+
+            if (!isset($_SESSION['start_time'])){
+                $_SESSION['start_time']=date('H:i:s');
+//            var_dump($_SESSION['start_time']);
+            }
 
             $new= new Profile();
             $show = $new->Show_Info($row);
