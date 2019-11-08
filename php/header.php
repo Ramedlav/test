@@ -1,7 +1,4 @@
-<?php
-session_start();
-if(isset($_SESSION)){echo '<br> on <br>';}else{echo '<br> off <br>';}
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
