@@ -3,7 +3,7 @@
 ?>
 
 <script type="text/javascript">
-    $.post('control_select.php',function (date) {
+    $.post('../select/control_select.php',function (date) {
         $('#all').html(date);
     });
 </script>
