@@ -4,7 +4,6 @@ include 'User.php';
 include '../profile/Profile.php';
 //session_destroy();
 session_start();
-
 if (isset($_SESSION)) {
 
     if (!isset($_SESSION['start_time'])) {
