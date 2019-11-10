@@ -17,10 +17,11 @@ foreach ($select as $arrs){
 $str.='</table><br><div id="chng"> </div><script type="text/javascript">
  $(\'.del\').on(\'click\', function(){
         var idd = $(this).attr("id");
+        console.log(idd); //<--see
         $.post(\'../select/adder.php \',
         { id : idd},
         function (data) { 
-            console.log(idd);
+            console.log(idd); //<-- dont see
             $.post(\'../select/control_select.php\',
                 function (date) {
                     $("#all").html(date);
