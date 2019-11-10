@@ -4,9 +4,9 @@ include 'Query.php';
 $try = new Select();
 if (!empty($_POST)){
     $id = $_POST['id'];
-    $show = $try->Inserter($id);
-    echo $id.'<br>';
-    echo $show;
+    $val = $_POST['val'];
+    $show = $try->Inserter($id,$val);
+    print_r ($show);
 }
 
 ?>
