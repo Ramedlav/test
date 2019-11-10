@@ -1,6 +1,7 @@
 
-$(function () {
 
+
+$(function () {
     $('#control_persone').on('click', function () {
         // console.log('1');
 

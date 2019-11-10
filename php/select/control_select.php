@@ -14,17 +14,15 @@ foreach ($select as $arrs){
     }
     $str.= '</tr>';
 }
-$str.='</table><script type="text/javascript">
+$str.='</table><br><div id="chng"> </div><script type="text/javascript">
                 
-                $(\'td\').on(\'click\',function () {
-                
-                    
-                    if ($(this).attr("id") && !$(this).val()){
-                        $(this).html("<input class =\'chng\' id="+$(this).attr("id")+" value="+$(this).html()+">");
-                        $(this).attr(\'class\') = \'chng\';
-                    
-                    }
+ $(\'td\').on(\'click\',function () {
+        if ($(this).attr("id") ){
+        $("#chng").html(" <input class =\'chng\' id="+\'chng_\'+$(this).attr("id")+" value="+$(this).html()+">"+
+            "<script type=\'text/javascript\'> $(\".chng\").on(\'keydown\',function(e) { if (e.keyCode === 13){ $.post(\'../select/adder.php\', { id : $(\'.chng\').attr(\'id\')}, function (data){console.log($(\'.chng\').val());}); $(this).remove();} });<\/script>");
+        }
     });
+ 
 </script>';
 echo $str;
 
