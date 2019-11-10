@@ -2,11 +2,9 @@
 
 
 $(function () {
+
     $('#control_persone').on('click', function () {
-        // console.log('1');
 
-
-        // if (this.id('1')){this.html('12121221');}
     });
 
 

@@ -17,12 +17,15 @@ class Select extends DB{
         $id = substr("$str", $num);
         $str = substr("$str", 0, $num);
         $query = "UPDATE users SET " . $str . " = '" . $val . "' WHERE id = " . $id . " ";
-        echo $query;
+            $this->connect()->query($query);
+            return ($val);
+    }
+
+    function Deleter($id){
+        $query = "DELETE FROM users WHERE id = ". $id ;
         $result = $this->connect()->query($query);
-        while ($row = $result->fetch_assoc()) {
-            $show[] = $row;
-            return $show;
-        }
+        return $result;
     }
 }
 ?>
+

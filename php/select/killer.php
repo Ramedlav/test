@@ -1,11 +1,13 @@
 <?php
 include '../classes/DB.php';
 include 'Query.php';
-$try = new Select();
+
+$new = new Select();
 if (!empty($_POST)){
+    echo "have ip for kill";
     $id = $_POST['id'];
-    $val = $_POST['val'];
-    $show = $try->Inserter($id,$val);
-    echo ($show);
+    $show = $new->Deleter($id);
+    return $show;
 }
+
 ?>
