@@ -9,7 +9,7 @@ class Select extends DB {
         return $show;
     }
     function Inserter($str){
-        echo $str;
+        return ($str);
         $str = substr("$str", 5);
         $id = substr("$str", strlen($str-2));
         $str = substr("$str",0, strlen($str-2));

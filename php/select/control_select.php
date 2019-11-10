@@ -17,11 +17,14 @@ foreach ($select as $arrs){
 $str.='</table><br><div id="chng"> </div><script type="text/javascript">
                 
  $(\'td\').on(\'click\',function () {
-        if ($(this).attr("id") ){
-            alert($(\'.chng\').attr(\'id\'));
+        
+        if ($(this).attr("id") ){       
+            let idd = $(this).attr(\'id\');
         $("#chng").html(" <input class =\'chng\' id="+\'chng_\'+$(this).attr("id")+" value="+$(this).html()+">"+
-            "<script type=\'text/javascript\'> $(\".chng\").on(\'keydown\',function(e) { if (e.keyCode === 13){ $.post(\'../select/adder.php\', { id : $(\'.chng\').attr(\'id\')}, function (data){console.log($(\'.chng\').val());}); $(this).remove();} });<\/script>");
-        }
+            "<script type=\'text/javascript\'> $(function(){ $(\".chng\").on(\'keydown\',function(e) { if (e.keyCode === 13){ $.post(\'../select/adder.php\', { id : $("+idd+").attr(\'id\')}, function (data){console.log(data); console.log($("+idd+").attr(\'id\'));}); $(this).remove();}}); });<\/script>");
+        console.log($(this).attr(\'id\'));
+        }   
+        
     });
  
 </script>';
