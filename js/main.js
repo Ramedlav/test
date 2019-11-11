@@ -2,6 +2,12 @@
 
 
 $(function () {
+    $('#forgot').on('click', function () {
+        $.post('../php/recovery_pass/recovery_view.php',function (data) {
+            $('#login_conteiner').html(data);
+        });
+
+    });
 
     $('#control_persone').on('click', function () {
 
