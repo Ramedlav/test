@@ -15,13 +15,16 @@ foreach ($select as $arrs){
     $str.= '<td><input type="button" class="del" id="'.$id.'" value="Del"></td></tr>';
 }
 $str.='</table><br><div id="chng"> </div><script type="text/javascript">
+$(function() {
+  
+
  $(\'.del\').on(\'click\', function(){
-        var idd = $(this).attr("id");
-        console.log(idd); //<--see
-        $.post(\'../select/adder.php \',
-        { id : idd},
+        let idd = $(this).attr("id");
+//        console.log(idd); //<--see
+        $.post(\'../select/killer.php \',
+        { id : idd },
         function (data) { 
-            console.log(idd); //<-- dont see
+//            console.log(idd); //<-- dont see
             $.post(\'../select/control_select.php\',
                 function (date) {
                     $("#all").html(date);
@@ -29,6 +32,7 @@ $str.='</table><br><div id="chng"> </div><script type="text/javascript">
         });
     });         
  
+});  
  $(\'td\').on(\'click\',function () {
 
         

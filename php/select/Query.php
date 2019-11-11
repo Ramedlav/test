@@ -24,7 +24,7 @@ class Select extends DB{
     function Deleter($id){
         $query = "DELETE FROM users WHERE id = ". $id ;
         $result = $this->connect()->query($query);
-        return $result;
+        return $id;
     }
 }
 ?>
