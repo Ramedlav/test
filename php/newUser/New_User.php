@@ -6,12 +6,13 @@ class Adder extends DB{
         print $testQuery;
         $result = $this->connect()->query($testQuery);
         while ($row = $result->fetch_assoc()) {
-        $result = $row;
+//        $run = $row;
         }
+        print_r($result);
         if ($result->num_rows==0){
             $query = "INSERT INTO users ( name, login, password) VALUES ('".$name."','".$login."','".$password."')";
             $this->connect()->query($query);
-            echo 'num is '.$row['num_rows'].' User '.$name.' is Added';
+            echo 'User '.$name.' is Added';
         }else{
             echo 'UserName '.$login.' is already exists';
             }
