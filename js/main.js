@@ -2,6 +2,12 @@
 
 
 $(function () {
+    $('#sign_up').on('click', function () {
+        $.post('../php/registration/registration_view.php',function (data) {
+            $('#login_conteiner').html(data);
+        });
+    });
+
     $('#forgot').on('click', function () {
         $.post('../php/recovery_pass/recovery_view.php',function (data) {
             $('#login_conteiner').html(data);
